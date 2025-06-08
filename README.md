@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d03756 (Deploy portfolio)
 # My Portfolio with Next.js
 
 This is a **personal portfolio website** built with **Next.js**. It showcases my skills, projects, and contact information, and includes dynamic functionalities such as a blog section, a contact form, and a comment system. The site is optimized for SEO, mobile responsiveness, and user experience.
