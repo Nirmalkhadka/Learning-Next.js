@@ -1,6 +1,3 @@
-Here’s a **README** template for your project that explains its features, including key functionalities of **Next.js** and how they are implemented in this project.
-
----
 
 # My Portfolio with Next.js
 
