@@ -277,3 +277,69 @@ form textarea {
     padding: 10px;
   }
 }
+/* styles/globals.css */
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated.fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animated.fadeIn.delay-1s {
+  animation: fadeIn 1s ease-out 1s forwards; /* Delayed fade-in */
+}
+
+.animated.fadeIn.delay-2s {
+  animation: fadeIn 1s ease-out 2s forwards; /* Delayed fade-in */
+}
+/* styles/globals.css */
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated.fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animated.fadeIn.delay-1s {
+  animation: fadeIn 1s ease-out 1s forwards; /* Delayed fade-in */
+}
+
+.animated.fadeIn.delay-2s {
+  animation: fadeIn 1s ease-out 2s forwards; /* Delayed fade-in */
+}
+
+/* Slide-in Animation */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated.slideInRight {
+  animation: slideInRight 1s ease-out forwards;
+}
