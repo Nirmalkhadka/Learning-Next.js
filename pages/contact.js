@@ -1,5 +1,5 @@
-// pages/contact.js
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -7,22 +7,39 @@ export default function Contact() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message }),
-    });
+    const templateParams = {
+      name,
+      email,
+      message,
+    };
 
-    if (res.ok) {
-      setStatus('Message sent successfully!');
-    } else {
-      setStatus('Error sending message. Please try again.');
-    }
+    // Ensure you're using the correct public environment variables
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      )
+      .then(
+        (response) => {
+          setStatus('Message sent successfully!');
+          console.error('sending email:', response);
+
+          // Clear form fields after successful submission
+          setName('');
+          setEmail('');
+          setMessage('');
+        },
+        (error) => {
+          setStatus('Error sending message. Please try again.');
+          console.error('Error sending email:', error);
+        }
+      );
   };
-
 
   return (
     <div className="container py-5">
