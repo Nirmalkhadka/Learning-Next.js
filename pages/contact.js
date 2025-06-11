@@ -19,9 +19,10 @@ export default function Contact() {
     if (res.ok) {
       setStatus('Message sent successfully!');
     } else {
-      setStatus('Error sending message. Please try again.');
+      setStatus('Errorr sending message. Please try again.');
     }
   };
+
 
   return (
     <div className="container py-5">
