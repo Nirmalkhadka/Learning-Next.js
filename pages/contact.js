@@ -19,7 +19,7 @@ export default function Contact() {
     if (res.ok) {
       setStatus('Message sent successfully!');
     } else {
-      setStatus('Errorr sending message. Please try again.');
+      setStatus('Error sending message. Please try again.');
     }
   };
 
