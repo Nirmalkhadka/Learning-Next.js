@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -7,6 +8,7 @@ export default function Contact() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
+  const handleSubmit = (e) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,23 +18,25 @@ export default function Contact() {
       message,
     };
 
-    // Ensure you're using the correct public environment variables
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-      )
+    // Replace 'service_id', 'template_id', and 'user_id' with your actual EmailJS details
+emailjs
+  .send(
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+    templateParams,
+    process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+  )
+
+
       .then(
         (response) => {
           setStatus('Message sent successfully!');
-          console.error('sending email:', response);
-
-          // Clear form fields after successful submission
+                    console.error('sending email:', response);
+// Clear form fields after successful submission
           setName('');
           setEmail('');
           setMessage('');
+        
         },
         (error) => {
           setStatus('Error sending message. Please try again.');
@@ -81,4 +85,5 @@ export default function Contact() {
       {status && <p className="mt-4 text-center">{status}</p>}
     </div>
   );
+}
 }
