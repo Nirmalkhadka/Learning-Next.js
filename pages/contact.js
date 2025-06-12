@@ -8,7 +8,6 @@ export default function Contact() {
   const [status, setStatus] = useState('');
 
   const handleSubmit = (e) => {
-  const handleSubmit = (e) => {
     e.preventDefault();
 
     const templateParams = {
@@ -84,5 +83,4 @@ emailjs
       {status && <p className="mt-4 text-center">{status}</p>}
     </div>
   );
-}
 }
