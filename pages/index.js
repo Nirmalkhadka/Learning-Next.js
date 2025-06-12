@@ -72,6 +72,9 @@ export default function Home() {
         <Link href="/contact" className="btn btn-outline-secondary mx-2">
           Contact Me
         </Link>
+        <Link href="/certificate" className="btn btn-outline-secondary mx-2">
+          Certificate
+        </Link>
       </div>
 
       {/* Projects Section */}
